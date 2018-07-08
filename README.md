@@ -1,19 +1,18 @@
-UEFI:SIMPLE - EFI development made easy
+ACPIPatcher: S0ix enabler
 =======================================
 
-A simple UEFI "Hello World!" style application that can:
-* be compiled on Windows or Linux, using Visual Studio 2017, MinGW or gcc.
-* be compiled for x86_32, x86_64, ARM or ARM64/AARCH64 targets
-* be tested on the fly, through a [QEMU](http://www.qemu.org)+[OVMF](http://tianocore.github.io/ovmf/)
-  UEFI virtual machine.
+This simple UEFI application patches your ACPI table to force enable S0 Low Power State 
+(aka. [Connected Standby](https://docs.microsoft.com/en-us/windows-hardware/design/device-experiences/modern-standby)) 
+regardless of platform configuration. Currently you have to run
+it every time before booting into Windows.
+
+**Please note that Windows do not support seamless transition between ACPI S3 and S0ix. A
+fresh instllation is required.**
 
 ## Prerequisites
 
 * [Visual Studio 2017](https://www.visualstudio.com/vs/community/) or gcc/make
-* [QEMU](http://www.qemu.org) __v2.7 or later__
-  (NB: You can find QEMU Windows binaries [here](https://qemu.weilnetz.de/w64/))
 * git
-* wget, unzip, if not using Visual Studio
 
 ## Sub-Module initialization
 
@@ -27,22 +26,7 @@ Or, if using a UI client (such as TortoiseGit) by selecting _Submodule Update_ i
 
 ## Compilation and testing
 
-If using Visual Studio, just press `F5` to have the application compiled and
-launched in the QEMU emulator.
-
-If using MinGW or Linux, issue the following from a command prompt:
-
-`make`
-
-If needed you can also add `ARCH=<arch>` and `CROSS_COMPILE=<tuple>`:
-
-`make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-`
-
-where `<arch>` can be `x64`, `ia32`, `arm` or `aa64`.
-
-You can also add `qemu` as your `make` target to run the application under QEMU,
-in which case a relevant UEFI firmware (OVMF for x86 or QEMU_EFI for Arm) will
-be automatically downloaded to run your application against it.
+Just build project in Visual Studio.
 
 ## Visual Studio 2017 and ARM/ARM64 support
 
