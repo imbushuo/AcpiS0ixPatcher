@@ -12,5 +12,5 @@ aa64
 x86_64
 x86_32
 image
-/.vs/AcpiPatcher/v15/ipch/AutoPCH
-/x64/Debug
+.vs
+build
