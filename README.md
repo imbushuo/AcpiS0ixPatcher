@@ -7,7 +7,7 @@ regardless of platform configuration. Currently you have to run
 it every time before booting into Windows.
 
 **Please note that Windows do not support seamless transition between ACPI S3 and S0ix. A
-fresh instllation is required.**
+fresh installation is required.**
 
 ## Prerequisites
 
